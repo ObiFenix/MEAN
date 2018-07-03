@@ -1,14 +1,19 @@
-function bubbleSort(arr){
-    var hold
-    for(var i=arr.length;i>0;i--){
-        for(var y=0;y<i;y++)
-            if(arr[y] > arr[y+1]){
-                hold = arr[y]
-                arr[y] = arr[y+1]
-                arr[y+1] = hold
-            }
-    }
-    return arr
-}
-console.log(bubbleSort([10,5,7,6,11,99,47,50,4,3,7,1]));
+// def coins(monies):
+//     d = {
+//         'q' : 25,
+//         'd' : 10,
+//         'n' : 5,
+//         'p' : 1,
+//         }
+//     totalCoins = []
+//     for i in d:
+//         count = int(monies / d[i])
+//         totalCoins.append(count)
+//         monies -= d[i] * count
+//     return totalCoins
 
+var obj = { first: "John", last: "Doe" };
+// Visit non-inherited enumerable keys
+Object.keys(obj).forEach(function(key) {
+    console.log(key);
+});
