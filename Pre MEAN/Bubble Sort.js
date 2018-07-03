@@ -11,4 +11,3 @@ function bubbleSort(arr){
     return arr
 }
 console.log(bubbleSort([10,5,7,6,11,99,47,50,4,3,7,1]));
-
