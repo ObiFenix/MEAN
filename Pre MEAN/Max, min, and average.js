@@ -2,8 +2,7 @@ function maxMinAvg(arr) {
     var min = arr[0],
         max = arr[0],
         sum = 0,
-        avg = 0,
-        arrnew = [];
+        avg = 0
     for(var i = 0;i<arr.length;i++)        {
         if(arr[i] < min){
             min = arr[i];
