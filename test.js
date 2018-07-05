@@ -1,20 +1,29 @@
-function Person(name, age) {
-    // create a private variable that stores a reference to the new object we create
-    var self = this;
-    var privateVariable = "This variable is private";
-    var privateMethod = function() {
-        console.log("this is a private method for " + self.name);
-        console.log(self);
+// parent Dot class
+class Dot {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
     }
-    this.name = name;
-    this.age = age;
-    this.greet = function() {
-        console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
-        // we can access our attributes within the constructor!
-        console.log("Also my privateVariable says: " + privateVariable)
-        // we can access our methods within the constructor!
-        privateMethod();
+    showLocation() {
+        console.log(`This ${ this.constructor.name } is at x ${ this.x } and y ${ this.y }`);
+    }
+    // simple method in the parent class
+    parentFunction(){
+        return "This is coming from the parent!";
     }
 }
-var joe = new Person("Joe", 23);
-joe.greet();
+// child Circle class
+class Circle extends Dot {
+    constructor(x, y, radius) {
+        super(x, y);
+        this.radius = radius;
+    }
+    // simple function in the child class
+    childFunction() {
+        // by using super, we can call the parent method
+        const message = super.parentFunction();
+        console.log(message);
+    }
+}
+const circle = new Circle(1, 2, 3);
+circle.childFunction();
