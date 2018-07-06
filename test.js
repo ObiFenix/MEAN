@@ -1,2 +1,6 @@
-console.log('Hi I am a test');
-console.log('Hi I am aLSO A  test');
+var cat = {name: 'Karl', food : 'fish frys',age : 4, sleeps : ['car','barn'] }
+
+for (var x in cat['sleeps']){
+    console.log(cat['sleeps'][x]);
+    
+}
