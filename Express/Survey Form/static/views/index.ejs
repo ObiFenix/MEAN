@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="col-8" action="/result" method="POST">
+                <div class="form-row form-group">
+                    <label for="" class="col-6">Your Name:</label>
+                    <input type="text" name="name" class="col-6">
+                </div>
+                <div class="form-row form-group">
+                    <label for="" class="col-6">Dojo Location:</label>
+                    <select class="form-control col-6" name="location" id="">
+                        <option>Dallas</option>
+                        <option>Not Dallas</option>
+
+                    </select>
+                </div>
+                <div class="form-row form-group">
+                    <label for="" class="col-6">Favorite Language:</label>
+                    <select class="form-control col-6" name="lang" id="">
+                        <option>Python<option>
+                        <option>JS<option>
+                        <option>SQL<option>
+
+                    </select>
+                </div>
+                <div class="form-row form-group">
+                    <label for="">Comment (optional):</label>                
+                </div>
+                <div class="form-row form-group">
+                    <textarea name="comment" class="col-12" rows="6"></textarea>          
+                </div>
+                <button class="float-right" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

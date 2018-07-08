@@ -22,5 +22,9 @@ app.set('view engine', 'ejs');
 app.get('/',(req,res)=>{
   res.render('index')
 })
+app.post('/result',(req,res)=>{
+  res.render('result',{req:req.body})
+})
+
 app.listen(8000, function() {
 })
