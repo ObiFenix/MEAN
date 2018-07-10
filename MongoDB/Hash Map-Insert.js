@@ -8,33 +8,58 @@ String.prototype.hashCode = function(){
     }
     for(i=0; i<this.length; i++){
         var char = this.charCodeAt(i);
-        hash = ((hash<<5)-hash) + char;  // bitwise operators are used to manipulate the string in binary
+        hash = ((hash<<5)-hash) + char;
         hash &= hash;                
     }
-    return hash;                         // by the end of the loop, the hash is unique to this string
+    return hash;
 }
-// Now, when we need a particular string's hash code, we may call its hashCode method, which we just created
-var hashedKey = "role".hashCode();
 
 function mod(input, div){
     return (input % div + div) % div;
 }
-// use the function to get the index position where we should store our data
-var idx = mod(hashedKey, hashMap.length);
 
 function hashInsert(key,val,hashMap){
+    if(key.length < 1 || hashMap.length < 1){
+        return undefined;
+    }
     var hashedKey = key.hashCode();
     var idx = mod(hashedKey, hashMap.length);
     if(hashMap[idx] == undefined){
-        hashMap[idx] = [[key,val]]
+        hashMap[idx] = [[key,val]];
     }
     else{
-        hashMap[idx].push([key,val])
+        for(var i=0;i<hashMap[idx].length;i++){
+            if(hashMap[idx][i][0] == key){
+                hashMap[idx][i][1] = val;
+            }
+            else{
+                hashMap[idx].push([key,val]);
+            }
+        }
     }
-return hashMap
+return hashMap;
 }
 hashInsert('Name','Dan',hashMap);
+console.log(hashMap);
 hashInsert('Name','Eric',hashMap);
 console.log(hashMap);
+
+function hashLookUp(hashMap,key){
+    if(key.length < 1 || hashMap.length < 1){
+        return undefined;
+    }
+    var hashedKey = key.hashCode();
+    var idx = mod(hashedKey, hashMap.length);
+    if(hashMap[idx] != undefined){
+        for(var i = 0;i<hashMap[idx].length;i++){
+            if(key == hashMap[idx][i][0]){
+                return hashMap[idx][i][1];
+            }
+        }
+    }
+    return null;
+}
+
+console.log(hashLookUp(hashMap,'Name'))
 
 
