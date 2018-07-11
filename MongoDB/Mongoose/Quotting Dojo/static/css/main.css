@@ -1,0 +1,8 @@
+ul{
+    display: block;
+}
+li{
+    display: block;
+    color:  blue;
+    margin-left: 40px;
+}
