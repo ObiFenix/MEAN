@@ -74,7 +74,10 @@ class Ninja {
  const turing = {
     fullName: "Alan Turing",
     firstName: "Alan",
-    lastName: "Turing"
+    lastName: "Turing",
+    debug(){
+        console.log("Console.log() is my friend.")
+     }
  }
  // Now I'll make a study function, which is a lot like our graduate function from above:
  function study(programmer: Ninja){

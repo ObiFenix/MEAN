@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TITLE</title>
+    <title>Login / Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -14,7 +14,69 @@
 </head>
 <body>
     <div class="container">
-
+        <h1>Login/Registration</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Register</h4>
+            </div>
+            <div class="col-md-6">
+                <h4>Login</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="register col-md-6">
+                <form action="/register" method="POST">
+                    <div class="form-group form-row">
+                        <label class="col-3">First Name: </label>
+                        <input class="col-9" type="text" class="form-control" name="first_name" >
+                        
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-3">Last Name: </label>
+                        <input class="col-9" type="text" class="form-control" name="last_name" >
+            
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-3">Email: </label>
+                        <input class="col-9" type="text" class="form-control" name="email" >
+                              
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-3">Birthday: </label>
+                        <input class="col-9" type="date" class="form-control" name="birthday" >
+                              
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-3">Password: </label>
+                        <input class="col-9" type="password" class="form-control" name="password" >
+                                     
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Register</button>
+                </form>
+            </div>
+            <div class="login col-md-6">
+                <form action="/login" method="POST">
+                    <div class="form-group form-row">
+                        <label class="col-3">Email: </label>
+                        <input class="col-9" type="text" class="form-control" name="login_email" >
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-3">Password: </label>
+                        <input class="col-9" type="password" class="form-control" name="login_password" >
+                       
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Login</button>
+                </form>
+            </div>
+        </div>
+        <!-- tip to easily see objects printed in full instead of [object Object] -->
+        
+        <!-- based on the structure of your messages, determine how to display them -->
+        <% if(messages.registration) { %>
+            <% for (var x of messages.registration) { %>
+            <h3><%= x %></h3>
+            <% } %>
+        <% } %>
     </div>
 </body>
 </html>
