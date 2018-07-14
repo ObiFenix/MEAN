@@ -1,0 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Restful Quotes API</h1>
+  <h2>All the tasks:</h2>
+  <li *ngFor='let quote of quotes'>{{ quote.quote }}</li>
+  <h2>The second quote:</h2>
+  <li *ngIf="quotes[1]">{{ quotes[1].quote }}</li>
+
+
