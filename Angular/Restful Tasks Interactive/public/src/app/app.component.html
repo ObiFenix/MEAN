@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Restful Tasks API
+  </h1>  
+  <button (click)="getTasksFromService()">Get All Tasks</button>
+  <li *ngFor='let quote of quotes'>{{ quote.quote }} 
+    <button (click)="onButtonClickParam(quote._id)">Show</button>
+  </li>
+  <li *ngIf="name.length > 0">{{name[0].quote}}</li>
+  <li *ngIf="name.length > 0">{{name[0].name}}</li>
+</div>
