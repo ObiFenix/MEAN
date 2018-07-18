@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <h3>New Task</h3>
+  <div class="row">
+    <form class="new col-8" (submit)="addQuotesThroughService()">
+        <p> {{ newTask | json }} </p>
+        <div class="form-group form-row">
+            <label class="col-3">Quote: </label>
+            <input class="col-9" type="text" class="form-control-sm" name="Quote" [(ngModel)]='newquote.quote' >
+        </div>
+        <div class="form-group form-row">
+            <label class="col-3">Name: </label>
+            <input class="col-9" type="text" class="form-control-sm" name="Name" [(ngModel)]='newquote.name' >
+        </div>
+        <input type="submit" value="Create" />
+    </form>
+  </div>
+  <div class="row">
+    <h3 class="col-6">Quote List</h3>  
+    <h3 class="col-6">Edit a Quote</h3>  
+  </div>
+  <div *ngFor='let quote of quotes' class="row">
+    <div class="col-6">
+      <div class="quote">
+        <h3>"{{ quote.quote }}"</h3>
+        <p>-{{ quote.name }} </p>
+        <button (click)="getUpdateQuote(quote._id)">Edit</button>
+        <button (click)="deleteQuote(quote._id)">Delete</button>
+      </div>
+    </div>
+    <div *ngIf="quote._id == quote_info._id" class="edit col-6">
+      <form (submit)="updateQuotesThroughService()">
+          <div class="form-group form-row">
+              <label class="col-3">Quote: </label>
+              <input class="col-9" type="text" class="form-control-sm" name="Quote" [value]="quote_info.quote" [(ngModel)]='quote_info.quote'>
+          </div>
+          <div class="form-group form-row">
+              <label class="col-3">Name: </label>
+              <input class="col-9" type="text" class="form-control-sm" name="Name" [value]="quote_info.name" [(ngModel)]='quote_info.name'>
+          </div>
+          <input type="submit" value="Edit" />
+      </form>
+    </div>
+  </div>
+</div>
