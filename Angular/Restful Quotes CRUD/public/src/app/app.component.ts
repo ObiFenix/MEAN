@@ -8,8 +8,8 @@ import { QuotesService } from "./quotes.service";
 })
 export class AppComponent {
   quotes = [];
-  quote_info : any
-  newquote : any;
+  quote_info : Object
+  newquote : Object;
 
   constructor(private _quotesService : QuotesService ){}
 
@@ -36,7 +36,8 @@ export class AppComponent {
   }
   getUpdateQuote(id:string){
     let ob = this._quotesService.getUpdateQuote({id:id});
-    ob.subscribe(data =>{this.quote_info = { quote: data.quote[0].quote, name: data.quote[0].name,id: data.quote[0]._id};
+    ob.subscribe(data =>{
+      this.quote_info = data
     })
   }
   updateQuotesThroughService(){

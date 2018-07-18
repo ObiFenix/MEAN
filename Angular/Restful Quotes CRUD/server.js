@@ -54,8 +54,6 @@ app.post('/new',(req,res)=>{
 })
 
 app.post('/delete',(req,res)=>{
-  console.log(req.body);
-  
   Quote.deleteOne({_id:req.body.id},(err)=>{
     if(err){
       console.log("Returned error", err);
@@ -74,7 +72,7 @@ app.post('/quote_info',(req,res)=>{
       res.json({message: "Error", error: err})
     }
     else {
-      res.json({message: "Success", quote: quote_info})
+      res.json(quote_info[0])
     }
  })
 })

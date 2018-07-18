@@ -28,7 +28,7 @@
         <button (click)="deleteQuote(quote._id)">Delete</button>
       </div>
     </div>
-    <div *ngIf="quote._id == quote_info.id" class="edit col-6">
+    <div *ngIf="quote._id == quote_info._id" class="edit col-6">
       <form (submit)="updateQuotesThroughService()">
           <div class="form-group form-row">
               <label class="col-3">Quote: </label>
