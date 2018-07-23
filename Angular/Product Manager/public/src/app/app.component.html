@@ -1,0 +1,22 @@
+<!-- Root Component HTML -->
+<div class="container">
+  <div class="row">
+      <h1>PPM - Project Product Management</h1>
+  </div>
+  <div class="row">
+      <ul class="nav nav-tabs|pills nav-stacked">
+          <li class="nav-item">
+              <a [routerLink]="['home']" href="#" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+              <a [routerLink]="['product']" href="#" class="nav-link">Product List</a>
+          </li>
+          <li class="nav-item disabled">
+              <a [routerLink]="['product/new']" href="#" class="nav-link">Product Creation</a>
+          </li>
+      </ul>
+  </div>
+  <div class="router-outlet row">
+      <router-outlet></router-outlet> 
+  </div>
+</div>

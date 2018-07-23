@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <h1>Edit Product</h1>
+  </div>
+  <div class="row">
+    <form *ngIf='product' class="new col-12" (submit)="editProduct()">
+      <div class="form-group form-row">
+          <label class="col-3">Title: </label>
+          <input class="col-9" type="text" class="form-control" name="title" [(ngModel)]='product.title' >
+      </div>
+      <div class="form-group form-row">
+          <label class="col-3">Price: </label>
+          <input class="col-9" type="text" class="form-control" name="price" [(ngModel)]='product.price' >
+      </div>
+      <div class="form-group form-row">
+          <label class="col-3">Image URL: </label>
+          <input class="col-9" type="text" class="form-control" name="imageURL" [(ngModel)]='product.imageURL' >
+      </div>
+      <input type="submit" value="Update" />
+      <input type="submit" value="Delete"  (click)="deleteProduct(product._id)" />
+    </form>
+  </div>
+</div>

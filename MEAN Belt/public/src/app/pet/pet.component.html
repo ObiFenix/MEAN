@@ -1,0 +1,13 @@
+
+<div class="container">
+    <a class="float-right" [routerLink]="['/pets']" href="*">Home</a>
+  <div class="row">
+    <h5>Details about {{ pet.name }}</h5>
+  </div>
+    <p>Pet type: <span>{{ pet.type }}</span></p>
+    <p>Description: <span>{{ pet.desc }}</span></p>
+    <p>Skills: <span>{{ pet.skills[0] }}, {{ pet.skills[1] }}, {{ pet.skills[2] }}</span></p>
+    <p >Likes: <span>{{ pet.likes }}</span></p>
+    <button click="likePet(pet._id)">Like a pet</button>
+    <button (click)="deletePet(pet._id)">Adopt this Pet</button>
+</div>
